@@ -12,7 +12,7 @@ public class RestfullBackendApplication {
 
 	public static void main(String[] args) {
 		System.out.println("Starting");
-		SpringApplication.run(RestfullBackendApplication.class, args);
+		SpringApplication.run(RestfullBackendApplication.class);
 		System.out.println("Started");
 	}
 }
