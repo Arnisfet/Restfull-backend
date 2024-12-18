@@ -6,5 +6,5 @@ CREATE TABLE product (
                          available_stock INT NOT NULL CHECK (available_stock >= 0),  -- INT for stock quantity
                          last_update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                          supplier_id INT REFERENCES supplier(id) ON DELETE SET NULL,
-                         image_id UUID REFERENCES images(id) ON DELETE SET NULL
+                         image_id UUID REFERENCES image(id) ON DELETE SET NULL
 );

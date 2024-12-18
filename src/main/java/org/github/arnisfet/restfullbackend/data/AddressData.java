@@ -2,12 +2,18 @@ package org.github.arnisfet.restfullbackend.data;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "address")
 public class AddressData {
     @Id
-    private String id;
+    private Integer id;
+    @NotNull
     private String country;
+    @NotNull
     private String city;
+    @NotNull
     private String street;
 }
