@@ -31,7 +31,6 @@ public class ClientData {
     private java.sql.Date birthday;
 
     @NotNull(message = "Gender is required")
-    @Pattern(regexp = "M|F|O", message = "Gender must be one of the following: M, F, O")
     private char gender;
 
     private Timestamp registration_date;

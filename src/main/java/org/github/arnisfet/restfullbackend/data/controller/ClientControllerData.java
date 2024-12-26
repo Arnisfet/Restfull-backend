@@ -26,7 +26,6 @@ public class ClientControllerData {
 
     public ClientData toClientData() {
         return ClientData.builder()
-                .id(1)
                 .client_name(this.client_name)
                 .client_surname(this.client_surname)
                 .birthday(this.birthday)

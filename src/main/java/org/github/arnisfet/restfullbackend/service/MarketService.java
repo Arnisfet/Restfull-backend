@@ -3,19 +3,22 @@ package org.github.arnisfet.restfullbackend.service;
 import lombok.AllArgsConstructor;
 import org.github.arnisfet.restfullbackend.data.controller.ClientControllerData;
 import org.github.arnisfet.restfullbackend.data.entity.ClientData;
-import org.github.arnisfet.restfullbackend.repository.MarketRepository;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.github.arnisfet.restfullbackend.repository.ClientRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class MarketService {
-    private MarketRepository marketRepository;
+    private ClientRepository clientRepository;
 
-    public ResponseEntity addClient(ClientControllerData clientController) {
+    public void addClient(ClientControllerData clientController) {
         ClientData clientData = clientController.toClientData();
-        marketRepository.save(clientData);
-        return new ResponseEntity(HttpStatus.OK);
+        ClientData  result = clientRepository.save(clientData);
+    }
+    public void deleteClient(String id) {
+        clientRepository.deleteById(id);
+    }
+    public ClientData getClient(String name, String surname) {
+        clientRepository.findBy();
     }
 }
